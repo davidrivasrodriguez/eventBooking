@@ -42,19 +42,20 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        if ($request->user()->isAdmin()) {
+            return back()->with('error', 'Administrator accounts cannot be deleted.');
+        }
+    
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current_password'],
         ]);
-
+    
         $user = $request->user();
-
         Auth::logout();
-
         $user->delete();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
+    
         return Redirect::to('/');
     }
 }

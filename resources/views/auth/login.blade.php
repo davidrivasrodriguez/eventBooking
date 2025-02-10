@@ -14,7 +14,12 @@
 
                 <!-- Password -->
                 <div class="mb-3">
-                    <x-input-label for="password" :value="__('Password')" />
+                    <div class="d-flex justify-content-between align-items-center">
+                        <x-input-label for="password" :value="__('Password')" />
+                        <a class="text-decoration-none small" href="{{ route('password.request') }}">
+                            {{ __('Forgot your password?') }}
+                        </a>
+                    </div>
                     <x-text-input type="password" class="form-control" name="password" required />
                     <x-input-error :messages="$errors->get('password')" />
                 </div>

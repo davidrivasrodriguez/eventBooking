@@ -5,32 +5,6 @@
         <h2 class="mb-4">Dashboard</h2>
 
         <div class="row">
-            @if(Auth::user()->isAdmin())
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Events</h5>
-                        <p class="card-text display-6">{{ App\Models\Event::count() }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Reservations</h5>
-                        <p class="card-text display-6">{{ App\Models\Reservation::count() }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Users</h5>
-                        <p class="card-text display-6">{{ App\Models\User::count() }}</p>
-                    </div>
-                </div>
-            </div>
-            @endif
 
 
             <div class="col-md-6 mb-4">
